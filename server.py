@@ -16,12 +16,12 @@ async def hello(websocket):
             explorerhat.motor.forward()
         case "backwards":
             explorerhat.motor.backward()
-        case "STOP":
+        case "brake":
             explorerhat.motor.stop()
         case _:
             print("direction not valid")
 async def main():
-    async with websockets.serve(hello, "localhost", 6316):
+    async with websockets.serve(hello, "127.0.0.1", 6316):
         await asyncio.Future()  # run forever
 
 

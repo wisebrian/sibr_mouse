@@ -11,7 +11,7 @@ def index():
 @app.route('/Left')
 def turnLeft():
     async def mcontrol():
-        async with websockets.connect("ws://localhost:6316") as websocket:
+        async with websockets.connect("ws://127.0.0.1:6316") as websocket:
           await websocket.send("left")
     asyncio.run(mcontrol())
     return "left"
@@ -19,7 +19,7 @@ def turnLeft():
 @app.route('/Right')
 def turnRight():
     async def mcontrol():
-        async with websockets.connect("ws://localhost:6316") as websocket:
+        async with websockets.connect("ws://127.0.0.1:6316") as websocket:
           await websocket.send("right")
     asyncio.run(mcontrol())
     return "right"
@@ -27,7 +27,7 @@ def turnRight():
 @app.route('/Forwards')
 def forwards():
     async def mcontrol():
-        async with websockets.connect("ws://localhost:6316") as websocket:
+        async with websockets.connect("ws://127.0.0.1:6316") as websocket:
           await websocket.send("forwards")
     asyncio.run(mcontrol())
     return "forwards"
@@ -35,18 +35,18 @@ def forwards():
 @app.route('/Backwards')
 def backwards():
     async def mcontrol():
-        async with websockets.connect("ws://localhost:6316") as websocket:
+        async with websockets.connect("ws://127.0.0.1:6316") as websocket:
           await websocket.send("backwards")
     asyncio.run(mcontrol())
     return "backwards"
 
-@app.route('/STOP')
-def stop():
+@app.route('/Brake')
+def brake():
     async def mcontrol():
-        async with websockets.connect("ws://localhost:6316") as websocket:
-          await websocket.send("STOP")
+        async with websockets.connect("ws://127.0.0.1:6316") as websocket:
+          await websocket.send("brake")
     asyncio.run(mcontrol())
-    return "STOP"
+    return "brake"
 
 if __name__ == '__main__':
-   app.run()
+   app.run(host='0.0.0.0')
