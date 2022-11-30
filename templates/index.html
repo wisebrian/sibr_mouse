@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>sibr</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
+    <script type=text/javascript> $(function() { $("#left").click(function (event) { $.getJSON('/Left', { },
+    function(data) { }); return false; }); }); </script>
+    <script type=text/javascript> $(function() { $("#right").click(function (event) { $.getJSON('/Right', { },
+    function(data) { }); return false; }); }); </script>    
+    <script type=text/javascript> $(function() { $("#forwards").click(function (event) { $.getJSON('/Forwards', { },
+    function(data) { }); return false; }); }); </script> 
+    <script type=text/javascript> $(function() { $("#backwards").click(function (event) { $.getJSON('/Backwards', { },
+    function(data) { }); return false; }); }); </script> 
+    <script type=text/javascript> $(function() { $("#stop").click(function (event) { $.getJSON('/STOP', { },
+    function(data) { }); return false; }); }); </script> 
+</head>
+
+<body>        
+        <input type = "button" id = "left" value = "Left" />
+        <input type = "button" id = "right" value = "Right" />
+        <input type = "button" id = "forwards" value = "Forwards" />
+        <input type = "button" id = "backwards" value = "Backwards" />
+        <input type = "button" id = "STOP" value = "STOP" />
+</body>    
+
+</html>
