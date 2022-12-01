@@ -3,7 +3,7 @@
 import asyncio
 import websockets
 
-async def hello(websocket):
+async def control(websocket):
     direction = await websocket.recv()
     match direction:
         case "left":
@@ -21,7 +21,7 @@ async def hello(websocket):
         case _:
             print("direction not valid")
 async def main():
-    async with websockets.serve(hello, "127.0.0.1", 6316):
+    async with websockets.serve(control, "127.0.0.1", 6316):
         await asyncio.Future()  # run forever
 
 

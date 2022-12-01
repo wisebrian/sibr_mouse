@@ -18,7 +18,6 @@ setup:
 	sudo apt-get install -y python3-dev
 	sudo apt-get install -y python3-setuptools
 	sudo apt-get install -y wget
-	sudo apt-get install -y git htop
 	wget https://www.python.org/ftp/python/3.10.8/Python-3.10.8.tgz
 	tar -xzvf Python-3.10.8.tgz
 	cd Python-3.10.8/
